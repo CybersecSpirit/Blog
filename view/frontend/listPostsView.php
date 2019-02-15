@@ -6,19 +6,19 @@
 
 
 <?php
-while ($data = $posts->fetch())
+foreach ($posts as $billet)
 {
 ?>
     <div class="news">
         <h3>
-            <?= htmlspecialchars($data['titre']) ?>
-            <em>le <?= $data['date_post'] ?> par </em><?= htmlspecialchars($data['pseudo']) ?>
+            <?= $billet->getTitle() ?>
+            <em>le <?= $billet->getTime() ?> par </em><?= $billet->getAuthor() ?>
         </h3>
 
         <p>
-            <?= nl2br(htmlspecialchars($data['contenu'])) ?>
+            <?= $billet->getContent() ?>
             <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+            <em><a href="index.php?action=post&amp;id=<?= $billet->getId() ?>">Commentaires</a></em>
         </p>
     </div>
 <?php

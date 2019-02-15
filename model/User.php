@@ -18,11 +18,22 @@ class User {
       $this->_id = $id;
     }
   public function setName($name)
-      {
-        $this->_name = $name;
-      }
+    {
+      $this->_name = $name;
+    }
   public function setPassword($password)
-        {
-          $this->_password = $password;
-        }
+    {
+      $this->_password = $password;
+    }
+  public function getId(){
+    return $this->_id;
+  }
+  public function getName()
+    {
+      return $this->_name;
+    }
+  public function getPassword()
+    {
+      return $this->_password;
+    }
 }

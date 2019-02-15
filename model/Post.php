@@ -9,7 +9,7 @@ class Post {
   private $_time;
   private $_auteur;
 
-  public function __construct($id, $title, $content, $time, $author)
+  public function __construct($id, $author, $title, $content, $time)
     {
       $this->setId($id);
       $this->setTitle($title);
@@ -20,7 +20,7 @@ class Post {
 
   public function setId($id)
       {
-        $this->_tid = $id;
+        $this->_id = $id;
       }
   public function setTitle($title)
     {
@@ -38,7 +38,21 @@ class Post {
     {
       $this->_auteur = $author;
     }
-
+  public function getId(){
+    return $this->_id;
+  }
+  public function getTitle(){
+    return $this->_titre;
+  }
+  public function getContent(){
+    return $this->_contenu;
+  }
+  public function getTime(){
+    return $this->_time;
+  }
+  public function getAuthor(){
+    return $this->_auteur;
+  }
 }
 
  ?>

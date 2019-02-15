@@ -4,11 +4,12 @@
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 
+use MoanaGR\Blog\Model\PostManager;
+
 function listPosts()
 {
     $postManager = new \MoanaGR\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
-
     require('view/frontend/listPostsView.php');
 }
 

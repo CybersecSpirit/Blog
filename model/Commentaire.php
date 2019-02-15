@@ -32,5 +32,17 @@ class Commentaire {
     {
       $this->_auteur = $author;
     }
+  public function getPost(){
+    return $this->_post;
+  }
+  public function getContent(){
+    return $this->_contenu;
+  }
+  public function getTime(){
+    return $this->_time;
+  }
+  public function getAuthor(){
+    return $this->_auteur;
+  }
 }
  ?>

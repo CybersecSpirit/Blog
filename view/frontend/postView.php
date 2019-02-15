@@ -1,4 +1,4 @@
-<?php $titre = htmlspecialchars($post['titre']); ?>
+<?php $titre = htmlspecialchars($post->getTitle()); ?>
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
@@ -6,18 +6,18 @@
 
 <div class="news">
     <h3>
-        <?= htmlspecialchars($post['titre']) ?>
-        <em>le <?= $post['date_post'] ?> par </em><?= htmlspecialchars($data['pseudo']) ?>
+        <?= htmlspecialchars($post->getTitle()) ?>
+        <em>le <?= $post->getTime() ?> par </em><?= $post->getAuthor() ?>
     </h3>
 
     <p>
-        <?= nl2br(htmlspecialchars($post['contenu'])) ?>
+        <?= $post->getContent() ?>
     </p>
 </div>
 
 <h2>Commentaires</h2>
 
-<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+<form action="index.php?action=addComment&amp;id=<?= $post->getId() ?>" method="post">
     <div>
         <label for="pseudo">Auteur</label><br />
         <input type="text" id="pseudo" name="pseudo" />
@@ -32,11 +32,11 @@
 </form>
 
 <?php
-while ($commentaire = $comments->fetch())
+foreach ($comments as $commentaire)
 {
 ?>
-    <p><strong><?= htmlspecialchars($commentaire['pseudo']) ?></strong> le <?= $commentaire['date_commentaire'] ?></p>
-    <p><?= nl2br(htmlspecialchars($commentaire['commentaire'])) ?></p>
+    <p><strong><?= htmlspecialchars($commentaire->getAuthor()) ?></strong> le <?= $commentaire->getTime() ?></p>
+    <p><?= nl2br(htmlspecialchars($commentaire->getContent())) ?></p>
 <?php
 }
 ?>
