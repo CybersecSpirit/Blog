@@ -27,6 +27,15 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
+        else if ($_GET['action'] == 'signalComment') {
+          if (isset($_GET['id']) && $_GET['id'] > 0) {
+            if (isset($_GET['idPost']) && $_GET['idPost'] > 0) {
+              signalerComment($_GET['id'], $_GET['idPost']);
+            } else { throw new Exception ('Erreur Id Post');}
+          } else {
+            throw new Exception('Erreur lors du signalement, réessayez plus tard.');
+          }
+        }
     }
     else {
         listPosts();

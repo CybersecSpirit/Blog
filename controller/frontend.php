@@ -37,3 +37,15 @@ function addComment($idBillet, $pseudo, $commentaire)
         header('Location: index.php?action=post&id=' . $idBillet);
     }
 }
+function signalerComment($id, $idPost)
+{
+    $commentManager = new \MoanaGR\Blog\Model\CommentManager();
+    $affectedLines = $commentManager->signalComment($id);
+
+    if ($affectedLines === false) {
+        throw new Exception('Impossible de signaler le commentaire !');
+    }
+    else {
+        header('Location: index.php?action=post&id=' . $idPost);
+    }
+}

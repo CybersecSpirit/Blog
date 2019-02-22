@@ -34,9 +34,10 @@
 <?php
 foreach ($comments as $commentaire)
 {
-?>
+?>  <div class="coms">
     <p><strong><?= htmlspecialchars($commentaire->getAuthor()) ?></strong> le <?= $commentaire->getTime() ?></p>
     <p><?= nl2br(htmlspecialchars($commentaire->getContent())) ?></p>
+    <a href="index.php?action=signalComment&amp;id=<?=$commentaire->getIdCom()?>&amp;idPost=<?= $commentaire->getPost() ?>""">Signaler le commentaire</a></div>
 <?php
 }
 ?>

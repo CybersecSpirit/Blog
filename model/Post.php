@@ -12,10 +12,10 @@ class Post {
   public function __construct($id, $author, $title, $content, $time)
     {
       $this->setId($id);
+      $this->setauthor($author);
       $this->setTitle($title);
       $this->setContent($content);
       $this->setTime($time);
-      $this->setauthor($author);
     }
 
   public function setId($id)
@@ -38,19 +38,24 @@ class Post {
     {
       $this->_auteur = $author;
     }
-  public function getId(){
+  public function getId()
+  {
     return $this->_id;
   }
-  public function getTitle(){
+  public function getTitle()
+  {
     return $this->_titre;
   }
-  public function getContent(){
+  public function getContent()
+  {
     return $this->_contenu;
   }
-  public function getTime(){
+  public function getTime()
+  {
     return $this->_time;
   }
-  public function getAuthor(){
+  public function getAuthor()
+  {
     return $this->_auteur;
   }
 }

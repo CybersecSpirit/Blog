@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Administration</title>
+        <title><?= $titre ?></title>
         <link href="public/css/style.css" rel="stylesheet" />
     </head>
 
     <body>
-        
+        <?= $contenu ?>
     </body>
 </html>

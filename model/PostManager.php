@@ -30,6 +30,13 @@ class PostManager extends Manager
 
         return $post;
     }
+    public function newPost($pseudo, $titre, $content)
+    {
+      $db = $this->dbConnect();
+      $req = $db->prepare("INSERT INTO billets(pseudo, titre, contenu) VALUES ('$pseudo','$titre',$content)");
+      $affectedLines = $req->exectute($pseudo, $titre, $content);
+      return $affectedLines;
+    }
 
 }
 ?>

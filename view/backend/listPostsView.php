@@ -1,9 +1,6 @@
 <?php $titre = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-<header>
-  <a href='indexAdmin.php'> Administration </a>
-</header>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>
 
@@ -21,7 +18,7 @@ foreach ($posts as $billet)
         <p>
             <?= $billet->getContent() ?>
             <br />
-            <em><a href="index.php?action=post&amp;id=<?= $billet->getId() ?>">Commentaires</a></em>
+            <a href="indexAdmin.php?action=editPost&amp;id=<?php $billet->getId() ?>">Modifier</a>
         </p>
     </div>
 <?php
