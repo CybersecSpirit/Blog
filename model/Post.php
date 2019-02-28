@@ -12,7 +12,7 @@ class Post {
   public function __construct($id, $author, $title, $content, $time)
     {
       $this->setId($id);
-      $this->setauthor($author);
+      $this->setAuthor($author);
       $this->setTitle($title);
       $this->setContent($content);
       $this->setTime($time);

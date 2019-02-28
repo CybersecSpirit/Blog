@@ -13,25 +13,25 @@ function listPosts()
     require('view/backend/listPostsView.php');
 }
 
-function addPost($pseudo, $titre, $content)
-{
-  $postManager = new \MoanaGR\Blog\Model\PostManager();
-  $post = $postManager->newPost($pseudo, $titre, $content);
-
-  if ($affectedLines === false) {
-      throw new Exception('Impossible de poster un nouveau billet !');
-  }
-  else {
-      header('Location: index.php');
-  }
-}
-function moderateComs($id)
+function viewModerateComs()
 {
   $commentManager = new \MoanaGR\Blog\Model\CommentManager();
   $modeCom = $commentManager->getCommentMod();
   require('view/backend/moderatePost.php');
 }
-/*function editPost($id){
+function deleteComs($id)
+{
+  $commentManager = new \MoanaGR\Blog\Model\CommentManager();
+  $modeCom = $commentManager->deleteComment($id);
+  header('Location: indexAdmin.php?action=moderate');
+}
+function editPost($id){
   $postManager = new \MoanaGR\Blog\Model\PostManager();
-  $post =
-}*/
+  $post = $postManager->postEdit($id);
+  require('view/backend/postEdit.php');
+}
+function postUpdate($id){
+  $postManager = new \MoanaGR\Blog\Model\PostManager();
+  $post = $postManager->postUpdate($id);
+  header('Location: indexAdmin.php');
+}

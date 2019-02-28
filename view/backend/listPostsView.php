@@ -3,6 +3,7 @@
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>
+<a href='indexAdmin.php?action=moderate'> Moderation des commentaires </a>
 
 
 <?php
@@ -18,11 +19,17 @@ foreach ($posts as $billet)
         <p>
             <?= $billet->getContent() ?>
             <br />
-            <a href="indexAdmin.php?action=editPost&amp;id=<?php $billet->getId() ?>">Modifier</a>
+            <a href="indexAdmin.php?action=editPost&amp;id=<?= $billet->getId() ?>">Modifier</a>
         </p>
     </div>
+
 <?php
 }
+?>
+<form action="" method=post>
+
+</form>
+<?php
 $posts->closeCursor();
 ?>
 <?php $contenu = ob_get_clean(); ?>
