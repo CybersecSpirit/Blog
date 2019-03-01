@@ -1,8 +1,8 @@
 <?php $titre = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-<header>
-  <a href='indexAdmin.php'> Administration </a>
+</header>
+  <a href='login.html'> Administration </a>
 </header>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>

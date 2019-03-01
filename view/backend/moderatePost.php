@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php $titre = 'Moderation'; ?>
 
 <?php ob_start(); ?>

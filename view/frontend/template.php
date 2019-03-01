@@ -7,6 +7,9 @@
     </head>
 
     <body>
+    </header>
+      <a href='login.html'> Administration </a>
+    </header>
         <?= $contenu ?>
     </body>
 </html>

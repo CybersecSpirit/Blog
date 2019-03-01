@@ -25,9 +25,11 @@ class User {
     {
       $this->_password = $password;
     }
-  public function getId(){
-    return $this->_id;
-  }
+
+  public function getId()
+    {
+      return $this->_id;
+    }
   public function getName()
     {
       return $this->_name;
@@ -36,4 +38,5 @@ class User {
     {
       return $this->_password;
     }
+  
 }

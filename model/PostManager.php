@@ -55,6 +55,12 @@ class PostManager extends Manager
       $update = $db->query("UPDATE billets SET titre = '$title', contenu = '$content' WHERE id = $id ");
       return $affectedLines;
     }
+    public function deletePost($id)
+    {
+      $db = $this->dbConnect();
+      $post = $db->query("DELETE FROM billets WHERE id = $id ");
+      return $post;
+    }
 
 }
 ?>

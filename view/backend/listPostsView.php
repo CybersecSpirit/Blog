@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php $titre = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
@@ -19,7 +20,8 @@ foreach ($posts as $billet)
         <p>
             <?= $billet->getContent() ?>
             <br />
-            <a href="indexAdmin.php?action=editPost&amp;id=<?= $billet->getId() ?>">Modifier</a>
+            <a href="indexAdmin.php?action=editPost&amp;id=<?= $billet->getId() ?>">Modifier</a></br>
+            <a href="indexAdmin.php?action=supprimer&amp;id=<?=$billet->getId() ?>">Supprimer</a>
         </p>
     </div>
 

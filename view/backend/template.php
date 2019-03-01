@@ -9,6 +9,9 @@
     </head>
 
     <body>
+      <header>
+        <a href='index.php'> Retour au blog </a>
+      </header>
         <?= $contenu ?>
     </body>
 </html>
