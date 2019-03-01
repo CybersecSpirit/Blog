@@ -1,8 +1,13 @@
-<?php $titre = 'Mon blog'; ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Mon Blog</title>
+        <link href="../Blog/public/css/style.css" rel="stylesheet" />
+    </head>
 
-<?php ob_start(); ?>
 </header>
-  <a href='login.html'> Administration </a>
+  <a href='indexAdmin.php'> Administration </a>
 </header>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>
@@ -28,6 +33,5 @@ foreach ($posts as $billet)
 }
 $posts->closeCursor();
 ?>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>
+</body>
+</html>

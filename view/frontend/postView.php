@@ -1,6 +1,13 @@
 <?php $titre = htmlspecialchars($post->getTitle()); ?>
 
-<?php ob_start(); ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title><?= $titre ?></title>
+        <link href="../Blog/public/css/style.css" rel="stylesheet" />
+    </head>
+<body>
 <h1>Mon super blog !</h1>
 <p><a href="index.php">Retour à la liste des billets</a></p>
 
@@ -41,6 +48,5 @@ foreach ($comments as $commentaire)
 <?php
 }
 ?>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>
+</body>
+</html>

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php
 
 // Chargement des classes
@@ -42,14 +43,17 @@ function postUpdate($id){
   $post = $postManager->postUpdate($id);
   header('Location: indexAdmin.php');
 }
-function connectUser(){
-  $author = $_POST['author'];
-  $password = $_POST['password'];
+function connectUser($author, $password){
   $userManager = new \MoanaGR\Blog\Model\UserManager();
   $login = $userManager->connectUser($author, $password);
-  $nameSession = $login->getName();
-  session_start();
-  $_SESSION['name'] = $nameSession;
-  listPosts();
+  if ($login == true) {
+    $nameSession = $login->getName();
+    session_start();
+    $_SESSION['name'] = "$nameSession";
+    header('Location: indexAdmin.php');
+  } else {
+    throw new Exception ('Erreur login');
+  }
+
 
 }

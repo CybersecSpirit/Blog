@@ -1,8 +1,18 @@
 <?php session_start();?>
 <?php $titre = 'Mon blog'; ?>
 
-<?php ob_start(); ?>
-<h1>Mon super blog !</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title><?= $titre ?></title>
+        <link href="../Blog/public/css/style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+<a href='indexAdmin.php?action=deconnect'>Deconnexion</a></br>
+<a href='index.php'> Retour Au Blog </a>
+<h1>Administration !</h1>
 <p>Derniers billets du blog :</p>
 <a href='indexAdmin.php?action=moderate'> Moderation des commentaires </a>
 
@@ -20,7 +30,7 @@ foreach ($posts as $billet)
         <p>
             <?= $billet->getContent() ?>
             <br />
-            <a href="indexAdmin.php?action=editPost&amp;id=<?= $billet->getId() ?>">Modifier</a></br>
+            <a href="indexAdmin.php?action=editPost&amp;id=<?= $billet->getId() ?>">Modifier</a>
             <a href="indexAdmin.php?action=supprimer&amp;id=<?=$billet->getId() ?>">Supprimer</a>
         </p>
     </div>
@@ -34,6 +44,5 @@ foreach ($posts as $billet)
 <?php
 $posts->closeCursor();
 ?>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>
+</body>
+</html>

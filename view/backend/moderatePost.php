@@ -1,7 +1,16 @@
 <?php session_start();?>
 <?php $titre = 'Moderation'; ?>
 
-<?php ob_start(); ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title><?= $titre ?></title>
+        <link href="../Blog/public/css/style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+<a href="indexAdmin.php?action=deconnect">Deconnexion</a>
 <h1>Mon super blog !</h1>
 <p>Commentaires à moderer :</p>
 <a href='indexAdmin.php'>Retour Menu Administration </a>
@@ -26,6 +35,5 @@ foreach ($modeCom as $commentaire)
 }
 $posts->closeCursor();
 ?>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>
+</body>
+</html>
