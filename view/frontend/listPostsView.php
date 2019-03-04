@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <title>Mon Blog</title>
-        <link href="../Blog/public/css/style.css" rel="stylesheet" />
+        <link href="../public/css/style.css" rel="stylesheet" />
     </head>
 
 </header>
-  <a href='indexAdmin.php'> Administration </a>
+  <a href='index.php?action=login'> Administration </a>
 </header>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>
@@ -31,7 +31,6 @@ foreach ($posts as $billet)
     </div>
 <?php
 }
-$posts->closeCursor();
 ?>
 </body>
 </html>

@@ -8,7 +8,7 @@ require_once('model/UserManager.php');
 
 use MoanaGR\Blog\Model\PostManager;
 
-function listPosts()
+function listPostsAdmin()
 {
     $postManager = new \MoanaGR\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
@@ -25,13 +25,13 @@ function deleteComs($id)
 {
   $commentManager = new \MoanaGR\Blog\Model\CommentManager();
   $modeCom = $commentManager->deleteComment($id);
-  header('Location: indexAdmin.php?action=moderate');
+  header('Location: index.php?action=moderate');
 }
 function deletePost($id)
 {
   $postManager = new \MoanaGR\Blog\Model\PostManager();
   $modePost = $postManager->deletePost($id);
-  header('Location: indexAdmin.php?action=moderate');
+  header('Location: index.php?action=moderate');
 }
 function editPost($id){
   $postManager = new \MoanaGR\Blog\Model\PostManager();
@@ -41,7 +41,7 @@ function editPost($id){
 function postUpdate($id){
   $postManager = new \MoanaGR\Blog\Model\PostManager();
   $post = $postManager->postUpdate($id);
-  header('Location: indexAdmin.php');
+  header('Location: index.php?action=listPosts');
 }
 function connectUser($author, $password){
   $userManager = new \MoanaGR\Blog\Model\UserManager();
@@ -50,7 +50,7 @@ function connectUser($author, $password){
     $nameSession = $login->getName();
     session_start();
     $_SESSION['name'] = "$nameSession";
-    header('Location: indexAdmin.php');
+    header('Location: index.php?action=listPosts');
   } else {
     throw new Exception ('Erreur login');
   }

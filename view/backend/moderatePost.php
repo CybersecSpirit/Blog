@@ -6,14 +6,14 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $titre ?></title>
-        <link href="../Blog/public/css/style.css" rel="stylesheet" />
+        <link href="../public/css/style.css" rel="stylesheet" />
     </head>
 
     <body>
-<a href="indexAdmin.php?action=deconnect">Deconnexion</a>
+<a href="index.php?action=deconnect">Deconnexion</a>
 <h1>Mon super blog !</h1>
 <p>Commentaires à moderer :</p>
-<a href='indexAdmin.php'>Retour Menu Administration </a>
+<a href='index.php?action=listPosts'>Retour Menu Administration </a>
 
 
 <?php
@@ -28,12 +28,11 @@ foreach ($modeCom as $commentaire)
         <p>
             <?= $commentaire->getContent() ?>
             <br />
-            <em><a href="indexAdmin.php?action=moderate&amp;id=<?= $commentaire->getIdCom() ?>">Supprimer</a></em>
+            <em><a href="index.php?action=moderate&amp;id=<?= $commentaire->getIdCom() ?>">Supprimer</a></em>
         </p>
     </div>
 <?php
 }
-$posts->closeCursor();
 ?>
 </body>
 </html>

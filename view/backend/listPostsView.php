@@ -6,15 +6,15 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $titre ?></title>
-        <link href="../Blog/public/css/style.css" rel="stylesheet" />
+        <link href="../public/css/style.css" rel="stylesheet" />
     </head>
 
     <body>
-<a href='indexAdmin.php?action=deconnect'>Deconnexion</a></br>
-<a href='index.php'> Retour Au Blog </a>
+<a href='index.php?action=deconnect'>Deconnexion</a></br>
+<a href='index.php?action=blog'> Retour Au Blog </a>
 <h1>Administration !</h1>
 <p>Derniers billets du blog :</p>
-<a href='indexAdmin.php?action=moderate'> Moderation des commentaires </a>
+<a href='index.php?action=moderate'> Moderation des commentaires </a>
 
 
 <?php
@@ -30,8 +30,8 @@ foreach ($posts as $billet)
         <p>
             <?= $billet->getContent() ?>
             <br />
-            <a href="indexAdmin.php?action=editPost&amp;id=<?= $billet->getId() ?>">Modifier</a>
-            <a href="indexAdmin.php?action=supprimer&amp;id=<?=$billet->getId() ?>">Supprimer</a>
+            <a href="index.php?action=editPost&amp;id=<?= $billet->getId() ?>">Modifier</a>
+            <a href="index.php?action=supprimer&amp;id=<?=$billet->getId() ?>">Supprimer</a>
         </p>
     </div>
 
@@ -42,7 +42,7 @@ foreach ($posts as $billet)
 
 </form>
 <?php
-$posts->closeCursor();
+
 ?>
 </body>
 </html>

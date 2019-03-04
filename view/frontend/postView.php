@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $titre ?></title>
-        <link href="../Blog/public/css/style.css" rel="stylesheet" />
+        <link href="../public/css/style.css" rel="stylesheet" />
     </head>
 <body>
 <h1>Mon super blog !</h1>
